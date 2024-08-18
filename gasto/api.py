@@ -7,7 +7,7 @@ from gasto.serializers import Pessoa_Serializer, Gasto_Serializer, Categoria_Ser
 
 
 @api_view(['GET'])
-def pessoa(request): 
+def pessoa(request):
     pessoa = Pessoa.objects.all()
     pessoa_serializer = Pessoa_Serializer(pessoa, many=True)
     return JsonResponse(pessoa_serializer.data, safe=False)
